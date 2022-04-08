@@ -7,9 +7,16 @@
 */
 int  main(void)
 {
-	for (char _a = "a" ; _a <= "z" ; _a++)
+	const int SIZE = 26;
+
+	char letters[SIZE] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+			      'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+			      'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+			      'y', 'z'};
+
+	for (index = 0 ; index <= SIZE ; index++)
 	{
-		putchar(_a)
+		putchar(letters[index])
 	}
 	return (0);
 }
