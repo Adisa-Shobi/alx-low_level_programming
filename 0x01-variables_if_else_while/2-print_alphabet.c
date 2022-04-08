@@ -19,7 +19,7 @@ int  main(void)
 	for (index = 0 ; index <= SIZE ; index++)
 	{
 		putchar(letters[index]);
+		putchar('\n');
 	}
-	putchar('\n');
 	return (0);
 }
