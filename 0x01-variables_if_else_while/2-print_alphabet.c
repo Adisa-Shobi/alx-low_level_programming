@@ -16,10 +16,10 @@ int  main(void)
 
 	int index;
 
-	for (index = 0 ; index <= SIZE ; index++)
+	for (index = 0 ; index < SIZE ; index++)
 	{
 		putchar(letters[index]);
-		putchar('\n');
 	}
+	putchar('\n');
 	return (0);
 }
