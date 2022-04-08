@@ -16,7 +16,7 @@ int  main(void)
 
 	int index;
 
-	for (index = SIZE - 1 ; index <= 0 ; index--)
+	for (index = (SIZE - 1) ; index >= 0 ; index--)
 	{
 		putchar(letters[index]);
 	}
