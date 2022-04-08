@@ -20,5 +20,6 @@ int  main(void)
 	{
 		putchar(letters[index]);
 	}
+	putchar('\n');
 	return (0);
 }
