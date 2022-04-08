@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	const int SIZE = 26;
+	const int SIZE = 24;
 
 	char lower[26] = {'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j',
 			    'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't',
