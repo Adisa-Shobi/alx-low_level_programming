@@ -15,7 +15,7 @@ int main(void)
 
 	for (index = 0; index < SIZE ; index++)
 	{
-		putchar(number[index]);
+		putchar(numbers[index]);
 	}
 	putchar('\n');
 	return (0);
