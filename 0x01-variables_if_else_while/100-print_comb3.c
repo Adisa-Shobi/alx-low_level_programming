@@ -19,13 +19,13 @@ int main(void)
 	{
 		for (index_2 = index + 1 ; index_2 < SIZE ; index_2++)
 		{
-			putchar(digits[index]);
-			putchar(digits[index_2]);
-			if (index <= 8)
+			if (index_2 != 1)
 			{
 				putchar(',');
 				putchar(' ');
 			}
+			putchar(digits[index]);
+			putchar(digits[index_2]);
 		}
 
 	}
