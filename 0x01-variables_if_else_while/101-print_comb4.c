@@ -16,7 +16,7 @@ int main(void)
 	int index_2;
 
 	int index_3;
-	
+
 	for (index = 0 ; index < SIZE ; index++)
 	{
 		for (index_2 = index + 1 ; index_2 < SIZE ; index_2++)
