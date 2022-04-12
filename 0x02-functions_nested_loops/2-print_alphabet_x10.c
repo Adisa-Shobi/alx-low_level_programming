@@ -11,6 +11,8 @@ void print_alphabet_x10(void)
 
 	int index = 0;
 
+	char c;
+
 	while (index < TIMES)
 	{
 		for (c = 'a' ; c <= 'z'; ++c)
