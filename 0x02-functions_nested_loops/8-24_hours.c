@@ -31,7 +31,7 @@ void jack_bauer(void)
 				{
 					_putchar(hours_1 + '0');
 					_putchar(hours_2 + '0');
-					_putchar(':');
+					_putchar(3);
 					_putchar(mins_1 + '0');
 					_putchar(mins_2 + '0');
 					_putchar('\n');
