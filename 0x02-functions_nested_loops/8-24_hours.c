@@ -19,7 +19,7 @@ void jack_bauer(void)
 	{
 		for (hours_2 = 0 ; hours_2 <= 4 ; hours_2++)
 		{
-			for (mins_1 = 0 ; mins_1 <= 6 ; mins_1++)
+			for (mins_1 = 0 ; mins_1 <= 5 ; mins_1++)
 			{
 				for (mins_2 = 0 ; mins_2 < 10 ; mins_2++)
 				{
