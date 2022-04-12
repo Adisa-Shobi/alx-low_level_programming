@@ -1,0 +1,11 @@
+#include "main.h"
+
+/**
+ *_abs - computes absolute value of integer
+ *
+ *Return: 0(sucess)
+ */
+int _abs(int num)
+{
+	
+}
