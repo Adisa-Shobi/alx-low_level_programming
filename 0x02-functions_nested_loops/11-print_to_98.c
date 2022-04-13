@@ -33,15 +33,22 @@ void print_to_98(int n)
 	_putchar('\n');
 }
 
+/**
+ *pr_int - prints integers using putchar
+ *
+ *@u: integer to be printed
+ *Return: void
+ */
 void pr_int(int u)
 {
-	if (u < 0) {
+	if (u < 0)
+	{
 		_putchar('-');
 		u = -u;
 	}
 
-	if (u/10)
-		pr_int(u/10);
+	if (u / 10)
+		pr_int(u / 10);
 
-	_putchar(u%10 + '0');
+	_putchar(u % 10 + '0');
 }
