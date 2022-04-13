@@ -1,0 +1,54 @@
+#include "main.h"
+void pr_int(int);
+
+/**
+*print_times_table - Returns the n times table
+*@n: number times table
+*Return: void
+*
+*/
+void print_times_table(int n)
+{
+	int multiples;
+
+	int product;
+
+	int num;
+
+	for (multiples = 0 ; multiples <= n ; multiples++)
+	{
+		for (num = 0; num <= n ; num++)
+		{
+			product = (multiples * num);
+			if  (product < 10 && num != 0)
+				_putchar(' ');
+			pr_int(product);
+			if (num != n)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
+		_putchar('\n');
+	}
+}
+
+/**
+ *pr_int - prints integers using putchar
+ *
+ *@u: integer to be printed
+ *Return: void
+ */
+void pr_int(int u)
+{
+	if (u < 0)
+	{
+		_putchar('-');
+		u = -u;
+	}
+
+	if (u / 10)
+		pr_int(u / 10);
+
+	_putchar(u % 10 + '0');
+}
