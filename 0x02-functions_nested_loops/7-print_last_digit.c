@@ -13,7 +13,9 @@ int print_last_digit(int n)
 	if (n < 0)
 		n = -n;
 	last_digit = (n % 10);
-	_putchar(last_digit + '0');
+	if (last_digit > 9)
+		_putchar((last_digit / 10) + '0');
+	_putchar((last_digit % 10) + '0');
 
 	return (last_digit);
 }
