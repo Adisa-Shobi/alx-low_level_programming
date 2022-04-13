@@ -1,0 +1,47 @@
+#include "main.h"
+void pr_int(int);
+/**
+ *print_to_98 - prints all natural numbers from n to 98
+ *
+ *@n: The starting point of the algorithm
+ *Return: void
+ */
+void print_to_98(int n)
+{
+	int figure;
+
+	while (n != 98)
+	{
+		if (n < 0)
+		{
+			_putchar('-');
+			figure = -n;
+		}
+		else
+		{
+			figure = n;
+		}
+		pr_int(figure);
+		_putchar(',');
+		_putchar(' ');
+		if (n < 98)
+			n++;
+		else if (n > 98)
+			n--;
+	}
+	pr_int(98);
+	_putchar('\n');
+}
+
+void pr_int(int u)
+{
+	if (u < 0) {
+		_putchar('-');
+		u = -u;
+	}
+
+	if (u/10)
+		pr_int(u/10);
+
+	_putchar(u%10 + '0');
+}
