@@ -1,62 +1,47 @@
 #include "main.h"
-void pr_int(int);
 
 /**
-*print_times_table - Returns the n times table
-*@n: number times table
-*Return: void
-*
-*/
+ * print_times_table - prints the n times table, starting with 0
+ * @n: number of the times table
+ */
 void print_times_table(int n)
 {
-	if (n <= 15 && n >= 0)
+	int i, j, k;
+
+	if (n >= 0 && n <= 15)
 	{
-		int multiples;
-
-		int product;
-
-		int num;
-
-		for (multiples = 0 ; multiples <= n ; multiples++)
+		for (i = 0; i <= n; i++)
 		{
-			for (num = 0; num <= n ; num++)
+			for (j = 0; j <= n; j++)
 			{
-				product = (multiples * num);
-				if  (product < 10 && num != 0)
+				k = j * i;
+				if (j == 0)
 				{
-					_putchar(' ');
-					_putchar(' ');
-				}
-				if (product < 100)
-					_putchar(' ');
-				pr_int(product);
-				if (num != n)
+					_putchar(k + '0');
+				} else if (k < 10 && j != 0)
 				{
 					_putchar(',');
 					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(k + '0');
+				} else if (k >= 10 && k < 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((k / 10) + '0');
+					_putchar((k % 10) + '0');
+				} else if (k >= 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar((k / 100) + '0');
+					_putchar(((k / 10) % 10) + '0');
+					_putchar((k % 10) + '0');
 				}
 			}
 			_putchar('\n');
 		}
 	}
-}
-
-/**
- *pr_int - prints integers using putchar
- *
- *@u: integer to be printed
- *Return: void
- */
-void pr_int(int u)
-{
-	if (u < 0)
-	{
-		_putchar('-');
-		u = -u;
-	}
-
-	if (u / 10)
-		pr_int(u / 10);
-
-	_putchar(u % 10 + '0');
 }
