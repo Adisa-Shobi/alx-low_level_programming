@@ -23,6 +23,11 @@ void print_times_table(int n)
 			{
 				product = (multiples * num);
 				if  (product < 10 && num != 0)
+				{
+					_putchar(' ');
+					_putchar(' ');
+				}
+				if (product < 100)
 					_putchar(' ');
 				pr_int(product);
 				if (num != n)
