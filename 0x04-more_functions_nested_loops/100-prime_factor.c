@@ -5,7 +5,7 @@ int is_prime(long int c);
  *main - Entry point
  *
  *
- *Retutn: 0(success)
+ *Return: 0(success)
  */
 int main(void)
 {
