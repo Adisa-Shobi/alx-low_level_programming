@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *print_diagonal - prints square using # char
+ *print_square - prints square using # char
  *
  *@n: The length of the diagonal
  *Return: void
