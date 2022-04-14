@@ -24,7 +24,7 @@ void more_numbers(void)
 /**
  *pr_int - prints integers using putchar
  *
- *@u: integer to be printed
+ *@c: integer to be printed
  *Return: void
  */
 void pr_int(int c)
