@@ -21,12 +21,12 @@ int main(void)
  */
 void largest_prime_factor(long int n)
 {
-	int index;
+	long int index;
 
 	for (index = n ; index > 0 ; index--)
 		if ((n % index) == 0 && is_prime(index))
 		{
-			printf("%d", index);
+			printf("%ld", index);
 			putchar('\n');
 			break;
 		}
