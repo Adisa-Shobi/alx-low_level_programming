@@ -12,6 +12,11 @@ int main(void)
 	return (0);
 }
 
+/**
+ *fizz_buzz - prints 1 -100 substituting multiples of 3 with Fizz,
+ *and multiples of 5 with Buzz, and both with FizzBuzz
+ *Return: void
+ */
 void fizz_buzz(void)
 {
 	int i;
