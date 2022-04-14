@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  *_isupper - Checks if the number given is upper case
