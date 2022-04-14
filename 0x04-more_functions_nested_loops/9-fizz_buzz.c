@@ -1,0 +1,46 @@
+#include <stdio.h>
+void fizz_buzz(void);
+/**
+ *main - Entry point
+ *
+ *
+ *Return: success(0)
+ */
+int main(void)
+{
+	fizz_buzz();
+	return (0);
+}
+
+void fizz_buzz(void)
+{
+	int i;
+
+	char _fizz[] = "Fizz";
+
+	char fizz_buzz[] = "FizzBuzz";
+
+	char _buzz[] = "Buzz";
+
+	for (i = 1 ; i <= 100 ; i++)
+	{
+		if ((i % 3) == 0 && (i % 5) == 0)
+		{
+			printf("%s", fizz_buzz);
+		}
+		else if ((i % 3) == 0)
+		{
+			printf("%s", _fizz);
+		}
+		else if ((i % 5) == 0)
+		{
+			printf("%s", _buzz);
+		}
+		else
+		{
+			printf("%d", i);
+		}
+		putchar(' ');
+	}
+	putchar('\n');
+}
