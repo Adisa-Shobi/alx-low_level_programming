@@ -40,7 +40,7 @@ void largest_prime_factor(long int n)
  */
 int is_prime(long int c)
 {
-	int range;
+	long int range;
 
 	for (range = 2 ; range < c ; range++)
 	{
