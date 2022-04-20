@@ -6,7 +6,7 @@
  *@str: String to be printed
  *Return: void
  */
-vois _puts(char *str)
+void _puts(char *str)
 {
 	int i  = 0;
 
