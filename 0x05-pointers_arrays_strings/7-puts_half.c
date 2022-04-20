@@ -14,5 +14,5 @@ void puts_half(char *str)
 
 	len = _strlen(str);
 	half = (len / 2);
-	_puts(str[half..len];
+	_puts(str[half..len]);
 }
