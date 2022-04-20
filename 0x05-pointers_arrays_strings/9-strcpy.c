@@ -2,7 +2,7 @@
 #include "2-strlen.c"
 
 /**
- *strcpy - copies one string to another
+ *_strcpy - copies one string to another
  *
  *@dest: The destination string
  *@src: The source string
