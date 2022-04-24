@@ -6,17 +6,23 @@
  *@a: Strings
  *Return: An array of characters
  */
-char *rot13(char *a)
+char *rot13(char *s)
 {
-	int i, j;
+	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	i = 0;
-	while (a[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (isalpha(a[i]))
+		for (j = 0; j < 52; j++)
 		{
-			
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+				break;
+			}
 		}
 	}
-	return (a);
+	return (s);
 }
