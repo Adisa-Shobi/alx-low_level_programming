@@ -1,0 +1,25 @@
+#include "main.h"
+#include <ctpe.h>
+
+/**
+ *rot13 - Rotates the alphabet by 13 places
+ *
+ *@a: Strings
+ *Return: An array of characters
+ */
+char *rot13(char *a)
+{
+	int i, j;
+
+	char k[27] = "abcdefghijklmnopqrstuvwxyz";
+
+	i = 0;
+	while (a[i] != '\0')
+	{
+		if (isalpha(a[i]))
+		{
+			
+		}
+	}
+	return (a);
+}

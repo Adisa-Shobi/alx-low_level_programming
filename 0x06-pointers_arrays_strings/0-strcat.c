@@ -1,5 +1,4 @@
 #include "main.h"
-#include "../0x05-pointers_arrays_strings/2-strlen.c"
 
 /**
  *_strcat - concatenates two strings
@@ -19,4 +18,19 @@ char *_strcat(char *dest, char *src)
 		dest[len_dest + i] = src[i];
 	}
 	return (dest);
+}
+
+/**
+ *_strlen - returns the length of a string
+ *
+ *@s: string
+ *Return: int(lenght of s)
+ */
+int _strlen(char *s)
+{
+	int n = 0;
+
+	while (*(s + n) != '\0')
+		n++;
+	return (n);
 }
