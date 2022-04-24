@@ -1,5 +1,4 @@
 #include "main.h"
-#include "../0x05-pointers_arrays_strings/2-strlen.c"
 
 /**
  *reverse_array - reverses an array of integers
@@ -20,4 +19,19 @@ void reverse_array(int *a, int n)
 		a[i] = a[len - i];
 		a[len - i] = p;
 	}
+}
+
+/**
+ *_strlen - returns the length of a string
+ *
+ *@s: string
+ *Return: int(lenght of s)
+ */
+int _strlen(char *s)
+{
+	int n = 0;
+
+	while (*(s + n) != '\0')
+		n++;
+	return (n);
 }
