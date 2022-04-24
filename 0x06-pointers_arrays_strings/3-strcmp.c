@@ -1,5 +1,4 @@
 #include "main.h"
-#include "../0x05-pointers_arrays_strings/2-strlen.c"
 
 /**
  *_strcmp - Compares two strings
@@ -22,4 +21,19 @@ int _strcmp(char *s1, char *s2)
 	else if (len_s2 == len_s1)
 		return (0);
 	return (0);
+}
+
+/**
+ *_strlen - returns the length of a string
+ *
+ *@s: string
+ *Return: int(lenght of s)
+ */
+int _strlen(char *s)
+{
+	int n = 0;
+
+	while (*(s + n) != '\0')
+		n++;
+	return (n);
 }
