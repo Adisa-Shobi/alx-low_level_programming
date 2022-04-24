@@ -11,7 +11,10 @@ void reverse_array(int *a, int n)
 {
 	int i, p, half, len;
 
-	len = n - 1;
+	if (n % 2 != 0)
+		len = n - 1;
+	else
+		len = n;
 	half = len / 2;
 	for (i = 0; i <= half ; i++)
 	{
@@ -19,19 +22,4 @@ void reverse_array(int *a, int n)
 		a[i] = a[len - i];
 		a[len - i] = p;
 	}
-}
-
-/**
- *_strlen - returns the length of a string
- *
- *@s: string
- *Return: int(lenght of s)
- */
-int _strlen(char *s)
-{
-	int n = 0;
-
-	while (*(s + n) != '\0')
-		n++;
-	return (n);
 }
