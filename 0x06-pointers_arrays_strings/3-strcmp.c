@@ -9,30 +9,16 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int len_s1, len_s2;
+	int i;
 
-	len_s1 = _strlen(s1);
-	len_s2 = _strlen(s2);
-
-	if (len_s2 > len_s1)
-		return (-15);
-	else if (len_s2 < len_s1)
-		return (15);
-	else
-		return (0);
-}
-
-/**
- *_strlen - returns the length of a string
- *
- *@s: string
- *Return: int(lenght of s)
- */
-int _strlen(char *s)
-{
-	int n = 0;
-
-	while (*(s + n) != '\0')
-		n++;
-	return (n);
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i] && s1[i] > s2[i])
+			return (15);
+		else if (s1[i] < s2[i])
+			return (-15);
+		i++;
+	}
+	return (0);
 }
