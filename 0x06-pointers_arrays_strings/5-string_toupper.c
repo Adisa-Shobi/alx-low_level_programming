@@ -4,7 +4,7 @@
 /**
  *string_toupper - Changes all lower case letters to upper case
  *
- *@char: Array of string chars being converted
+ *@s: Array of string chars being converted
  *Return: Array of string chars
  */
 char *string_toupper(char *s)
