@@ -10,20 +10,13 @@ char *rot13(char *a)
 {
 	int i, j;
 
-	char k[53] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
-	char c[53] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
-
 	i = 0;
 	while (a[i] != '\0')
 	{
-		j = 0;
-		while (k[j] != '\0')
+		if (isalpha(a[i]))
 		{
-			if (a[i] == k[j])
-				a[i] = c[j];
-			j++;
+			
 		}
-		i++;
 	}
 	return (a);
 }
