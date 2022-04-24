@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- *_strncpy - copies the dtring src points to into dest without exceeding n bytes
+ *_strncpy - copies the dtring src points
+ *to into dest without exceeding n bytes
  *
  *@dest: The pointer to dest
  *@src: Pointer to src
+ *@n: max number of bytes
  *Return: the destination pointer
  */
 char *_strncpy(char *dest, char *src, int n)
