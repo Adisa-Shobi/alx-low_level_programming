@@ -1,5 +1,4 @@
 #include "main.h"
-#include "../0x05-pointers_arrays_strings/2-strlen.c"
 
 /**
  *_strncpy - copies the dtring src points to into dest without exceeding n bytes
@@ -17,4 +16,19 @@ char *_strncpy(char *dest, char *src, int n)
 	for (; i < n ; i++)
 		dest[i] = '\0';
 	return (dest);
+}
+
+/**
+ *_strlen - returns the length of a string
+ *
+ *@s: string
+ *Return: int(lenght of s)
+ */
+int _strlen(char *s)
+{
+	int n = 0;
+
+	while (*(s + n) != '\0')
+		n++;
+	return (n);
 }
