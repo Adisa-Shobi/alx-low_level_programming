@@ -1,5 +1,4 @@
 #include "main.h"
-#include "../0x05-pointers_arrays_strings/2-strlen.c"
 
 /**
  *_strncat - Concatenates two strings without exceeding n bytes
@@ -22,4 +21,19 @@ char *_strncat(char *dest, char *src, int n)
 		dest[len_dest + i] = src[i];
 	dest[(len_dest + i)] = '\0';
 	return (dest);
+}
+
+/**
+ *_strlen - returns the length of a string
+ *
+ *@s: string
+ *Return: int(lenght of s)
+ */
+int _strlen(char *s)
+{
+	int n = 0;
+
+	while (*(s + n) != '\0')
+		n++;
+	return (n);
 }
