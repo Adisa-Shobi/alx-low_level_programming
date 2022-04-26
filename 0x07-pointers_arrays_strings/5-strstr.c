@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- *strstr - finds the first occurence of a substring in a string
+ *_strstr - finds the first occurence of a substring in a string
  *@haystack: string being queried
  *@needle: substring
  *Return: A pointer to the first byte of occurence
