@@ -20,5 +20,10 @@ char *_strchr(char *s, char c)
 			return (x);
 		}
 	}
-	return (NULL);
+	if (s[i] == c)
+	{
+		x = (s + i);
+		return (x);
+	}
+	return (0);
 }
