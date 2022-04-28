@@ -17,7 +17,7 @@ int is_palindrome(char *s)
  *
  *@s: string
  *@n: Length of s
- *i: index
+ *@i: index
  *Return: 1 if palindrome and 0 if not
  */
 int palindrome(char *s, int n, int i)
