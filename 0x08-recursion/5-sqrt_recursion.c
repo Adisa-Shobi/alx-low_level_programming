@@ -8,15 +8,22 @@
  */
 int _sqrt_recursion(int n)
 {
-	int i;
+	return (_sqrt(n, 1));
+}
 
-	for (i = 1 ; n > 0 ; i += 2)
+/**
+ *_sqrt - finds the square root of a number
+ *@n: int
+ *@s: number to be subtracted
+ *Return: The sqareroot or -1 if not a perfect square
+ */
+int _sqrt(int n, int s)
+{
+	if (n <= 0)
 	{
-		n -= i;
-	}
-
-	if (n == 0)
-		return ((i / 2));
-	else
+		if (n == 0)
+			return ((s / 2));
 		return (-1);
+	}
+	return (_sqrt(n - s, s + 2));
 }
