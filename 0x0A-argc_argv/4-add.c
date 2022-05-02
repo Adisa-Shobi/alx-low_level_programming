@@ -39,14 +39,11 @@ int main(int argc, char *argv[])
 int is_num(const char *s)
 {
 	int i = 0;
-	
+
 	while (s[i] != '\0')
 	{
 		if (s[i] < '0' || s[i] > '9')
-		{
-			printf("Not digit: %c\n", s[i]);
 			return (0);
-		}
 		i++;
 	}
 	return (1);
