@@ -29,6 +29,7 @@ char *str_concat(char *s1, char *s2)
 		free(merged);
 		return (NULL);
 	}
+	free(merged);
 	return (merged);
 }
 
