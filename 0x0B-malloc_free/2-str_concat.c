@@ -26,7 +26,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		free(merged)
+		free(merged);
 		return (NULL);
 	}
 	return (merged);
