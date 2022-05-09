@@ -18,7 +18,8 @@ int main(int argc, char** argv)
 	}
 	if (all_digits(argv[1]) && all_digits(argv[2]))
 	{
-		printf("%i\n", atoi(argv[1]) * atoi(argv[2]));
+		print_number(atoll(argv[1]) * atoll(argv[2]));
+		_putchar('\n');
 	}
 	else
 	{
@@ -47,4 +48,24 @@ int all_digits(char *n)
 		i++;
 	}
 	return (1);
+}
+
+/**
+ *print_number - prints numbers using putchar
+ *@n: Number to be printed
+ *
+ *Return: void
+ */
+void print_number(int n)
+{
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
+
+	if (n / 10)
+		print_number(n / 10);
+
+	_putchar('0' + (n % 10));
 }
