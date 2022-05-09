@@ -6,10 +6,11 @@
 
 /**
  *main - entry point to program that multiplies positive numbers
- *
+ *@argc: count of inputs
+ *@argv: array of inputs
  *Return: 0 if success
  */
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
 	if (argc > 3)
 	{
