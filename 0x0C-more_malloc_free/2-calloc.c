@@ -4,7 +4,7 @@
 
 /**
  *_calloc - allocates space for an array
- *@nmamb: Number of members in array
+ *@nmemb: Number of members in array
  *@size: Size of each element in the array
  *Return: A pointer to the memory area
  */
