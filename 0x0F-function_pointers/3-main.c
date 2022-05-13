@@ -25,12 +25,12 @@ int main(int argc, char **argv)
 	if (func == NULL)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 	if ((*op == '/' || *op == '%') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(100);
 	}
 
 	printf("%d\n", func(atoi(argv[1]), atoi(argv[3])));
