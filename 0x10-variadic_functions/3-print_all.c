@@ -17,7 +17,7 @@ void print_all(const char * const format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	while (format[i] != '\0')
+	while (format && format[i] != '\0')
 	{
 		match = 0;
 		match = print_case(format[i], ap);
