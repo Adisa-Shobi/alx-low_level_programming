@@ -12,15 +12,16 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
+	int i = 0, match;
 
 	va_list ap;
 
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
-		print_case(format[i], ap);
-		if (still_match((format + i + 1)) && is_match(format[i]))
+		match = 0;
+		match = print_case(format[i], ap);
+		if (still_match((format + i + 1)) && match)
 		{
 			printf("%s", ", ");
 		}
@@ -37,24 +38,20 @@ void print_all(const char * const format, ...)
  */
 int still_match(const char *rem)
 {
-	if (*rem == '\0')
+	switch (*rem)
+	{
+	case '\0':
 		return (0);
-	if (*rem == 'c' || *rem == 'i' || *rem == 'f' || *rem == 's')
+	case 'c':
 		return (1);
-	else
-		return (still_match(rem + 1));
-}
-
-/**
- *is_match - checks if the letter specified is a valid data type
- *@c: A character
- *Return: An integer
- */
-int is_match(char c)
-{
-	if (c == 'c' || c == 'i' || c == 'f' || c == 's')
+	case 'i':
 		return (1);
-	return (0);
+	case 'f':
+		return (1);
+	case 's':
+		return (1);
+	}
+	return (still_match(rem + 1));
 }
 
 /**
@@ -64,7 +61,7 @@ int is_match(char c)
  *@sample: a string predicting formats of var
  *Return: gives back an integer if there was a match
  */
-void print_case(const char sample, va_list ap)
+int print_case(const char sample, va_list ap)
 {
 	char *sp;
 
@@ -72,21 +69,22 @@ void print_case(const char sample, va_list ap)
 		{
 		case 'c':
 			printf("%c", va_arg(ap, int));
-			break;
+			return (1);
 		case 'i':
 			printf("%d", va_arg(ap, int));
-			break;
+			return (1);
 		case 'f':
 			printf("%f", va_arg(ap, double));
-			break;
+			return (1);
 		case 's':
 			sp = va_arg(ap, char *);
 			if (sp == NULL)
 			{
 				printf("(nil)");
-				break;
+				return (1);
 			}
 			printf("%s", sp);
-			break;
+			return (1);
 		}
+	return (0);
 }
