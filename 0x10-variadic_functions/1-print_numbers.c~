@@ -24,11 +24,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (i != (n - 1))
 		{
 			if (separator != NULL)
-				printf("%c", *separator);
-			printf(" ");
+				_putchar(*separator);
+			_putchar(' ');
 		}
 		i++;
 	}
-	printf("\n");
+	_putchar('\n');
 	va_end(ap);
 }
