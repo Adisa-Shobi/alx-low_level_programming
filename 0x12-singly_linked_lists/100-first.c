@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "lists.h"
+
+void start_up_func(void) __attribute__ ((constructor));
 
 /**
  *start_up_func - Prints a message before the main function
