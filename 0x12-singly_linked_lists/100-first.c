@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <lists.h>
+#include "lists.h"
 
 /**
  *start_up_func - Prints a message before the main function
