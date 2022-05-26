@@ -3,7 +3,7 @@
 /**
  *get_nodeint_at_index - retuns an integer at a certain index
  *
- *@n: The index position specified
+ *@index: The index position specified
  *@head: the head of the singly linked list
  *Return: A pointer to the specified node
  */
