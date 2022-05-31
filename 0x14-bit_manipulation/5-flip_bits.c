@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  *flip_bits - counts how may bits need to be flipped to match a certain number
@@ -9,15 +10,12 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int num, i;
+	int len = (sizeof(n) * 8), i;
 	unsigned int count = 0;
 
-	num = n ^ m;
-	for (i = 0; num > 1; i++)
+	for (i = 0; i != len; i++)
 	{
-		if ((num & 1) == 1)
-			count += 1;
-		num = num >> 1;
+		count += ((n >> i) & 1) != ((m >> i) & 1);
 	}
-	return (count + num);
+	return (count);
 }
