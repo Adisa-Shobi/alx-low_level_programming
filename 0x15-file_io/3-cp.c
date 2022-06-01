@@ -26,27 +26,27 @@ int main(int ac, char **av)
 	file_from = av[1];
 	file_to = av[2];
 	fd_from = open(file_from, O_RDONLY);
-	if (fd_from == -1)
+	if (fd_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 			file_from);
 		exit(98);
 	}
 	fd_to = open(file_to, (O_WRONLY | O_CREAT | O_TRUNC), mode);
-	if (fd_to == -1)
+	if (fd_to < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 	transfer_bytes(fd_from, fd_to, file_from, file_to);
 	close_from = close(fd_from);
-	if (close_from == -1)
+	if (close_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 	close_to = close(fd_to);
-	if (close_to == -1)
+	if (close_to < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
@@ -70,7 +70,7 @@ void transfer_bytes(int fd_from, int fd_to, char *file_from, char *file_to)
 	while (input > 0)
 	{
 		input = read(fd_from, buffer, MAX);
-		if (input == -1)
+		if (input < 0)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n",
@@ -80,7 +80,7 @@ void transfer_bytes(int fd_from, int fd_to, char *file_from, char *file_to)
 		if (input > 0)
 		{
 			output = write(fd_to, buffer, input);
-			if (output == -1 || input != output)
+			if (output < 0 || input != output)
 			{
 				dprintf(STDERR_FILENO,
 					"Error: Can't write to %s\n", file_to);
