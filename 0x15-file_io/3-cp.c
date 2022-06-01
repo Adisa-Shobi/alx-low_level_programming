@@ -14,9 +14,9 @@
  */
 int main(int ac, char **av)
 {
-	int fd_from, fd_to;
+	int fd_from, fd_to, close_to, close_from;
 	char *file_from, *file_to;
-	int mode = (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	mode_t mode = (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
 	if (ac != 3)
 	{
@@ -39,17 +39,19 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	transfer_bytes(fd_from, fd_to, file_from, file_to);
-	if (close(fd_from) == -1)
+	close_from = close(fd_from);
+	if (close_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
-	if (close(fd_to) == -1)
+	close_to = close(fd_to);
+	if (close_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
-	return (1);
+	return (0);
 }
 
 /**
@@ -63,9 +65,9 @@ int main(int ac, char **av)
 void transfer_bytes(int fd_from, int fd_to, char *file_from, char *file_to)
 {
 	ssize_t input, output;
-	char buffer[1024];
+	char buffer[MAX];
 
-	while (input != 0)
+	while (input > 0)
 	{
 		input = read(fd_from, buffer, MAX);
 		if (input == -1)
@@ -78,7 +80,7 @@ void transfer_bytes(int fd_from, int fd_to, char *file_from, char *file_to)
 		if (input > 0)
 		{
 			output = write(fd_to, buffer, input);
-			if (output == -1)
+			if (output == -1 || input != output)
 			{
 				dprintf(STDERR_FILENO,
 					"Error: Can't write to %s\n", file_to);
