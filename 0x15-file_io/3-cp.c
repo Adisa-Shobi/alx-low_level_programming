@@ -16,7 +16,7 @@ int main(int ac, char **av)
 {
 	int fd_from, fd_to;
 	char *file_from, *file_to;
-/*	int mode = (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH); */
+	int mode = (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
 	if (ac != 3)
 	{
@@ -32,7 +32,7 @@ int main(int ac, char **av)
 			file_from);
 		exit(98);
 	}
-	fd_to = open(file_to, (O_WRONLY | O_CREAT | O_TRUNC), 00664);
+	fd_to = open(file_to, (O_WRONLY | O_CREAT | O_TRUNC), mode);
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
@@ -41,12 +41,12 @@ int main(int ac, char **av)
 	transfer_bytes(fd_from, fd_to, file_from, file_to);
 	if (close(fd_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %d", fd_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 	if (close(fd_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %d", fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 	return (1);
