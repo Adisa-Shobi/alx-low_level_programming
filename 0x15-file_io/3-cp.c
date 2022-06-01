@@ -28,7 +28,7 @@ int main(int ac, char **av)
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error1: Can't read from file %s\n",
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 			file_from);
 		exit(98);
 	}
@@ -41,12 +41,12 @@ int main(int ac, char **av)
 	transfer_bytes(fd_from, fd_to, file_from, file_to);
 	if (close(fd_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_from);
+		dprintf(STDERR_FILENO, "Error: Can't close %d", fd_from);
 		exit(100);
 	}
 	if (close(fd_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close %d", fd_to);
 		exit(100);
 	}
 	return (1);
