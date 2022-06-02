@@ -160,7 +160,7 @@ int print_class(unsigned char *e_ident)
 	switch (e_ident[EI_CLASS])
 	{
 	case ELFCLASSNONE:
-		printf("Invalid\n");
+		printf("none\n");
 		break;
 	case ELFCLASS32:
 		printf("ELF32\n");
@@ -186,7 +186,7 @@ void print_data(unsigned char *e_ident)
 	switch (e_ident[EI_DATA])
 	{
 	case ELFDATANONE:
-		printf("Unknown data format\n");
+		printf("none\n");
 		break;
 	case ELFDATA2LSB:
 		printf("2's complement, little-endian\n");
@@ -225,6 +225,9 @@ void print_osabi(unsigned char *e_ident)
 	{
 	case ELFOSABI_NONE:
 		printf("UNIX - System V\n");
+		break;
+	case ELFOSABI_SYSV:
+		printf("Unix - System V\n");
 		break;
 	case ELFOSABI_HPUX:
 		printf("UNIX - HP-UX\n");
