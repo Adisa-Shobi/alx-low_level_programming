@@ -42,26 +42,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->value = strdup(value);
 	new_node->next = NULL;
 	if (array[node_index])
-		add_to_node(array[node_index], new_node);
-	else
 	{
+		new_node->next = array[node_index];
 		array[node_index] = new_node;
 	}
+	else
+		array[node_index] = new_node;
 	return (1);
-}
-
-/**
- *add_to_node - Adds to the already existing node in case of collision
- *
- *@node: The node to be appended to
- *@new_node: The new node being added
- *Return: 1 if succesful, 0 otherwise
- */
-void add_to_node(hash_node_t *node, hash_node_t *new_node)
-{
-	while (node->next)
-	{
-		node = node->next;
-	}
-	node->next = new_node;
 }
