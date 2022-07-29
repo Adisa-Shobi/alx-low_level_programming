@@ -14,22 +14,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t **array;
 
 
-	if (strlen(key) == 0 || !key || !ht || !value || *key == '\0')
+	if (strlen(key) == 0 || !ht || !value || *key == '\0')
 		return (0);
 	node_index = key_index((unsigned char *)key, ht->size);
 	array = ht->array;
 	if (array[node_index])
 	{
 		node = array[node_index];
-		while (node)
+		if (strcmp(key, node->key) == 0)
 		{
-			if (strcmp(key, node->key) == 0)
-			{
-				free(node->value);
-				node->value = strdup(value);
-				return (1);
-			}
-			node = node->next;
+			free(node->value);
+			node->value = strdup(value);
+			return (1);
 		}
 	}
 	new_node = malloc(sizeof(*new_node));
