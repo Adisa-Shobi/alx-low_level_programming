@@ -1,7 +1,4 @@
-# Second make file to build executable
-
 CC := gcc
-
 SRC := school.c main.c
 
 all:
