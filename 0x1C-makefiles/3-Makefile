@@ -13,7 +13,7 @@ all: ${OBJ}
 
 # cleans temporary files and executable
 clean:
-	${RM} *~ school
+	${RM} *~ ${NAME}
 
 # cleans object files
 oclean:
@@ -23,4 +23,4 @@ oclean:
 fclean: clean oclean
 
 # Forces recompilation of all object files
-re: oclean all
+re: fclean all
