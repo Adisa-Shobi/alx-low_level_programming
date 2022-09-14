@@ -1,9 +1,10 @@
 # Second make file to build executable
 
 CC := gcc
-SRC := $(wildcard *.c)
+
+SRC := school.c main.c
 
 all: school
 
-school: ${SRC}
+school: main.c school.c
 	${CC} ${SRC} -o school
