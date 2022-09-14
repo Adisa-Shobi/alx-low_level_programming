@@ -1,0 +1,32 @@
+# Makefile to compile school executable
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+RM := rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+.PHONY: all clean oclean fclean re
+
+
+all: m.h main.o school.o
+	$(CC) ${OBJ} -o ${NAME}
+
+main.o : main.c
+	${CC} -c -o $@ $<
+
+school.o : school.c
+	${CC} -c -o $@ $<
+
+# cleans temporary files and executable
+clean:
+	$(RM) *~ ${NAME}
+
+# cleans object files
+oclean:
+	$(RM) ${OBJ}
+
+# cleans object files, source files, and temporary files
+fclean: clean oclean
+
+# Forces recompilation of all object files
+re: fclean all
