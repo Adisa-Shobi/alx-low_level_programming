@@ -6,5 +6,5 @@ SRC := school.c main.c
 
 all: school
 
-school: main.c school.c
+school:
 	${CC} ${SRC} -o school
